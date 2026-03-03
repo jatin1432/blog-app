@@ -27,8 +27,8 @@ function Login({ closeModal, setUser }) {
     setLoading(true);
     try {
       const url = isRegister
-        ? "https://blog-app.infinityfreeapp.com/api/register"
-        : "https://blog-app.infinityfreeapp.com/api/login";
+        ? "https://blog-app.rf.gd/api/register"
+        : "https://blog-app.rf.gd/api/login";
 
       const payload = isRegister
         ? { username: name, email, password }
