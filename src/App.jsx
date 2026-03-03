@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
  
-    axios.get(`api/session.php`, { withCredentials: true })
+    axios.get(`/api/session.php`, { withCredentials: true })
       .then(res => {
         if (res.data.status === "success") setUser(res.data.user);
       })
