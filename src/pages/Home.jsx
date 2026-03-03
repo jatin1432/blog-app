@@ -23,7 +23,7 @@ function Home({ user }) {
   const fetchBlogs = async () => {
     try {
       const res = await axios.get(
-        `http://localhost/blog-app/backend/api/posts/index.php`,
+        `https://blog-app.infinityfreeapp.com/api/posts/index.php`,
         {
           params: {
             page,
