@@ -26,7 +26,7 @@ function App() {
   const [sessionChecked, setSessionChecked] = useState(false);
 
   useEffect(() => {
-    axios.get("https://blog-app.infinityfreeapp.com/session.php", { withCredentials: true })
+    axios.get("https://blog-app.infinityfreeapp.com/api/session.php", { withCredentials: true })
       .then(res => {
         if (res.data.status === "success") setUser(res.data.user);
       })
