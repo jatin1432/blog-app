@@ -13,7 +13,7 @@ function CreateEditBlog({ user }) {
   // Fetch blog for editing
   useEffect(() => {
     if (id) {
-      axios.get(`https://blog-app.infinityfreeapp.com/api/posts/?id=${id}`)
+      axios.get(`https://blog-app.rf.gd/api/posts/?id=${id}`)
         .then(res => {
           const blog = res.data;
           setTitle(blog.title);
@@ -33,7 +33,7 @@ function CreateEditBlog({ user }) {
     if (id) {
       
       // Update existing blog
-      axios.put(`https://blog-app.infinityfreeapp.com/api/posts/update.php/?id=${id}`, payload, { withCredentials: true })
+      axios.put(`https://blog-app.rf.gd/api/posts/update.php/?id=${id}`, payload, { withCredentials: true })
         .then(()=> {
           toast.success("Blog updated successfully ✏️");
           navigate(`/blog/${id}`);
@@ -43,7 +43,7 @@ function CreateEditBlog({ user }) {
     } else {
       // Create new blog
      axios.post(
-        "https://blog-app.infinityfreeapp.com/api/posts/create.php",
+        "https://blog-app.rf.gd/api/posts/create.php",
         payload,
         { withCredentials: true }
       )
