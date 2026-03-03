@@ -9,7 +9,6 @@ function Login({ closeModal, setUser }) {
   const [password, setPassword] = useState("");
   const [isRegister, setIsRegister] = useState(false);
   const [loading, setLoading] = useState(false);
-  const BASE_URL = "https://blog-app.rf.gd/api";
 
   useEffect(() => {
     const handleClick = e => {
@@ -28,8 +27,8 @@ function Login({ closeModal, setUser }) {
     setLoading(true);
     try {
       const url = isRegister
-        ? `${BASE_URL}/register`
-        : `${BASE_URL}/login`;
+        ? `api/register`
+        : `api/login`;
 
       const payload = isRegister
         ? { username: name, email, password }
