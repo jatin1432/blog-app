@@ -17,10 +17,10 @@ function BlogDetails({ user }) {
   const page = params.get("page") || 1;
 
   // Fetch Single Blog
-
+const BASE_URL = "https://blog-app.rf.gd/api";
   useEffect(() => {
     axios
-      .get(`https://blog-app.rf.gd/api/posts/index.php?id=${id}`,  { withCredentials: true }  )
+      .get(`${BASE_URL}/posts/index.php?id=${id}`,  { withCredentials: true }  )
       .then((res) => {
         let postData = res.data;
 
@@ -64,7 +64,7 @@ const likeBlog = () => {
   if (!blog?.id) return;
 
   axios.post(
-    `https://blog-app.rf.gd/api/posts/like.php?id=${blog.id}`,
+    `${BASE_URL}/posts/like.php?id=${blog.id}`,
     { user_id: user.id },
      { withCredentials: true }  
   )
@@ -93,7 +93,7 @@ const deleteBlog = async () => {
 
   try {
     await axios.delete(
-      "https://blog-app.rf.gd/api/posts/delete.php",
+      `${BASE_URL}/posts/delete.php`,
       {
         params: { id: blog.id },
         withCredentials: true
@@ -120,7 +120,7 @@ const deleteBlog = async () => {
   if (!comment.trim()) return toast.error("Comment cannot be empty");
 
   axios.post(
-    `https://blog-app.rf.gd/api/posts/add.php`,
+    `${BASE_URL}/posts/add.php`,
     {
       post_id: blog.id,
       user_id: user.id,
