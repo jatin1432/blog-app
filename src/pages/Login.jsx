@@ -27,8 +27,8 @@ function Login({ closeModal, setUser }) {
     setLoading(true);
     try {
       const url = isRegister
-        ? `api/register`
-        : `api/login`;
+        ? `/api/register`
+        : `/api/login`;
 
       const payload = isRegister
         ? { username: name, email, password }
