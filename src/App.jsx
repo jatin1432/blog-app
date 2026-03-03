@@ -26,8 +26,8 @@ function App() {
   const [sessionChecked, setSessionChecked] = useState(false);
 
   useEffect(() => {
-    const BASE_URL = "https://blog-app.rf.gd/api";
-    axios.get(`${BASE_URL}/session.php`, { withCredentials: true })
+ 
+    axios.get(`api/session.php`, { withCredentials: true })
       .then(res => {
         if (res.data.status === "success") setUser(res.data.user);
       })
