@@ -11,10 +11,9 @@ function CreateEditBlog({ user }) {
   const [image, setImage] = useState("");
 
   // Fetch blog for editing
-  const BASE_URL = "https://blog-app.rf.gd/api";
   useEffect(() => {
     if (id) {
-      axios.get(`${BASE_URL}/posts/?id=${id}`)
+      axios.get(`/api/posts/?id=${id}`)
         .then(res => {
           const blog = res.data;
           setTitle(blog.title);
@@ -34,7 +33,7 @@ function CreateEditBlog({ user }) {
     if (id) {
       
       // Update existing blog
-      axios.put(`${BASE_URL}/posts/update.php/?id=${id}`, payload, { withCredentials: true })
+      axios.put(`/api/posts/update.php/?id=${id}`, payload, { withCredentials: true })
         .then(()=> {
           toast.success("Blog updated successfully ✏️");
           navigate(`/blog/${id}`);
@@ -44,7 +43,7 @@ function CreateEditBlog({ user }) {
     } else {
       // Create new blog
      axios.post(
-        `${BASE_URL}/posts/create.php`,
+        `/api/posts/create.php`,
         payload,
         { withCredentials: true }
       )
