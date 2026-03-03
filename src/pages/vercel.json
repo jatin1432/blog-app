@@ -1,8 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "https://blog-app.rf.gd/:path*"
-    }
+    { "source": "/api/:path*", "destination": "https://blog-app.rf.gd/api/:path*" }
   ]
 }
