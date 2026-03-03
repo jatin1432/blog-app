@@ -19,11 +19,11 @@ function Home({ user }) {
     fetchBlogs();
     setSearchParams({page})
   }, [page, search]);
-const BASE_URL = "https://blog-app.rf.gd/api";
+
   const fetchBlogs = async () => {
     try {
       const res = await axios.get(
-        `${BASE_URL}posts/index.php`,
+        `api/posts/index.php`,
         {
           params: {
             page,
