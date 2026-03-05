@@ -23,7 +23,7 @@ function Home({ user }) {
   const fetchBlogs = async () => {
     try {
       const res = await axios.get(
-        `https://blog-app.rf.gd/api/posts/index.php`,
+        `http://blog-app.rf.gd/api/posts/index.php`,
         {
           params: {
             page,
